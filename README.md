@@ -6,9 +6,6 @@ The tutorial is available through our documentation site: [Android Tutorial](htt
 
 For copy errors in the tutorial, please file bugs against the main [`apollo-android` repo](https://github.com/apollographql/apollo-android). For broken code, please file issues on this repo.
 
-This repo has two branches:
 
 * [master](https://github.com/apollographql/apollo-android-tutorial/tree/master) is the final state of the application with all functionality
-* [initial](https://github.com/apollographql/apollo-android-tutorial/tree/initial) is the starter project with the boilerplate and UI code already written but no Apollo-Android code.
-# apolloclient_android_example
-# apolloclient_android_example
+UI code already written but no Apollo-Android code.
