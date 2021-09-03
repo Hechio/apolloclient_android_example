@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
+import com.apollographql.apollo.fetcher.ApolloResponseFetchers
 import com.example.rocketreserver.databinding.LaunchListFragmentBinding
 import kotlinx.coroutines.channels.Channel
 import java.nio.channels.Channels
@@ -42,7 +43,10 @@ class LaunchListFragment : Fragment() {
             var cursor: String? = null
             for (item in channel){
                 val response = try {
-                    apolloClient(requireContext()).query(LaunchListQuery(cursor = Input.fromNullable(cursor))).await()
+                    apolloClient(requireContext())
+                        .query(LaunchListQuery(cursor = Input.fromNullable(cursor)))
+                        .toBuilder().responseFetcher(ApolloResponseFetchers.CACHE_FIRST)
+                        .build().await()
                 }catch (e: ApolloException){
                     Log.d("LaunchList", "Failure", e)
                     return@launchWhenResumed

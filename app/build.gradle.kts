@@ -48,6 +48,7 @@ dependencies {
     implementation("androidx.security:security-crypto:1.0.0")
     implementation("com.apollographql.apollo:apollo-runtime:2.5.5")
     implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.5")
+    implementation("com.apollographql.apollo:apollo-normalized-cache-sqlite:2.5.5")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
